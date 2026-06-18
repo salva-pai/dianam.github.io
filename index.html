@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Diana C. Mantilla Banich</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    background-color:#FFF5F7;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333;
+    padding:40px;
+}
+
+/* MENÚ HAMBURGUESA */
+
+.menu-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    color:#C2185B;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,0.15);
+    z-index:1001;
+}
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0;
+    height:100%;
+    background:#FFF0F5;
+    overflow-x:hidden;
+    transition:0.4s;
+    box-shadow:5px 0 15px rgba(0,0,0,0.15);
+    z-index:1000;
+}
+
+.sidebar.abierto{
+    width:25%;
+    min-width:280px;
+}
+
+.cerrar{
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:35px;
+    cursor:pointer;
+    color:#C2185B;
+}
+
+.sidebar-contenido{
+    margin-top:80px;
+    padding:20px;
+}
+
+.sidebar-contenido a{
+    display:block;
+    text-decoration:none;
+    color:#333;
+    background:white;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.sidebar-contenido a:hover{
+    background:#F8BBD0;
+}
+
+/* CONTENIDO */
+
+.contenedor{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h1{
+    color:#C2185B;
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    color:#666;
+    font-size:22px;
+    letter-spacing:8px;
+    margin-bottom:25px;
+}
+
+.linea{
+    height:3px;
+    background:#E91E63;
+    border:none;
+    margin-bottom:30px;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px 40px;
+    margin-bottom:50px;
+}
+
+.item{
+    font-size:18px;
+}
+
+.seccion{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:30px;
+    margin-top:50px;
+}
+
+.titulo-seccion{
+    color:#C2185B;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.sobre-mi{
+    border-top:2px solid #F48FB1;
+    border-bottom:2px solid #F48FB1;
+    padding:20px;
+    line-height:1.8;
+    font-size:18px;
+}
+
+.tarjeta{
+    background:#FFF0F5;
+    border-left:6px solid #E91E63;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:25px;
+}
+
+.tarjeta h3{
+    color:#C2185B;
+    margin-bottom:8px;
+}
+
+.cargo{
+    display:block;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+ul{
+    margin-top:10px;
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:8px;
+    line-height:1.6;
+}
+
+p{
+    line-height:1.7;
+}
+
+.habilidad{
+    display:inline-block;
+    background:#F8BBD0;
+    padding:10px 15px;
+    border-radius:20px;
+    margin:5px;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:20px;
+    }
+
+    .sidebar.abierto{
+        width:80%;
+    }
+
+    .info,
+    .seccion{
+        grid-template-columns:1fr;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    .subtitulo{
+        font-size:18px;
+        letter-spacing:4px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MENÚ -->
+
+<div class="menu-btn" onclick="abrirMenu()">☰</div>
+
+<div id="miSidebar" class="sidebar">
+
+    <span class="cerrar" onclick="cerrarMenu()">×</span>
+
+    <div class="sidebar-contenido">
+
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#experiencia">Experiencia Laboral</a>
+        <a href="#academicos">Datos Académicos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#idiomas">Idiomas</a>
+        <a href="#conocimientos">Conocimientos</a>
+        <a href="#linkedin">LinkedIn</a>
+    </div>
+
+</div>
+
+<div class="contenedor">
+
+    <h1>DIANA C. MANTILLA BANICH</h1>
+
+    <div class="subtitulo">
+        ESTUDIANTE DE ADMINISTRACIÓN DE NEGOCIOS
+    </div>
+
+    <hr class="linea">
+
+    <div class="info">
+
+        <div class="item">👤 01/08/2005</div>
+
+        <div class="item">✉ diana.mantilla@ucsp.edu.pe</div>
+
+        <div class="item">📞 953853978</div>
+
+        <div class="item">📍 Av. Mariscal Cáceres 103</div>
+
+    </div>
+
+    <!-- SOBRE MI -->
+
+    <div class="seccion" id="sobre-mi">
+
+        <div class="titulo-seccion">
+            SOBRE MÍ
+        </div>
+
+        <div class="sobre-mi">
+            Soy estudiante de Administración de Negocios de tercer año en la Universidad Católica San Pablo. Me destaco por mi responsabilidad, creatividad y habilidades para el trabajo en equipo. Mantengo un compromiso constante con el crecimiento personal y profesional.
+        </div>
+
+    </div>
+
+    <!-- EXPERIENCIA -->
+
+    <div class="seccion" id="experiencia">
+
+        <div class="titulo-seccion">
+            EXPERIENCIA LABORAL
+        </div>
+
+        <div>
+
+            <div class="tarjeta">
+
+                <h3>INKAFARMA - Boticas IP S.A.C.</h3>
+
+                <span class="cargo">
+                    Asesora de productos dermatológicos | Julio 2025 - Diciembre 2025
+                </span>
+
+                <ul>
+                    <li>Atención al público.</li>
+                    <li>Capacitaciones de ventas.</li>
+                    <li>Manejo de logística.</li>
+                </ul>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <h3>Gestora Comercial</h3>
+
+                <span class="cargo">
+                    ONG Atmosphera | Mayo 2024 - Junio 2025
+                </span>
+
+                <ul>
+                    <li>Diseño e implementación de estrategias comerciales.</li>
+                    <li>Gestión de alianzas con empresas.</li>
+                    <li>Seguimiento de indicadores.</li>
+                </ul>
+
+            </div>
+
+            <div class="tarjeta">
+
+                <h3>CARA (Staff)</h3>
+
+                <span class="cargo">
+                    Congreso Anual sobre la Región Arequipa | Junio 2023 - Marzo 2024
+                </span>
+
+                <ul>
+                    <li>Bienvenida y registro de asistentes.</li>
+                    <li>Proceso de línea de producción.</li>
+                    <li>Entrega de merchandising.</li>
+                    <li>Recepción de ponentes.</li>
+                    <li>Apoyo al equipo técnico.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DATOS ACADÉMICOS -->
+
+    <div class="seccion" id="academicos">
+
+        <div class="titulo-seccion">
+            DATOS ACADÉMICOS
+        </div>
+
+        <div>
+
+            <div class="tarjeta">
+                <h3>Colegio Alas Peruanas</h3>
+                <span class="cargo">2012 - 2022</span>
+                <p>Segundo puesto en rendimiento académico general.</p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>Universidad Católica San Pablo</h3>
+                <span class="cargo">2023 - Actual</span>
+                <p>Administración de Negocios - 6to semestre.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- HABILIDADES -->
+
+    <div class="seccion" id="habilidades">
+
+        <div class="titulo-seccion">
+            HABILIDADES
+        </div>
+
+        <div class="tarjeta">
+
+            <span class="habilidad">Buena comunicación</span>
+            <span class="habilidad">Trabajo en equipo</span>
+            <span class="habilidad">Resolución de problemas</span>
+            <span class="habilidad">Liderazgo</span>
+            <span class="habilidad">Proactividad y resiliencia</span>
+            <span class="habilidad">Agilidad con los resultados</span>
+
+        </div>
+
+    </div>
+
+    <!-- IDIOMAS -->
+
+    <div class="seccion" id="idiomas">
+
+        <div class="titulo-seccion">
+            IDIOMAS
+        </div>
+
+        <div class="tarjeta">
+
+            <p><strong>Castellano:</strong> Nativo</p>
+            <br>
+            <p><strong>Inglés:</strong> Básico - Intermedio</p>
+
+        </div>
+
+    </div>
+
+    <!-- CONOCIMIENTOS -->
+
+    <div class="seccion" id="conocimientos">
+
+        <div class="titulo-seccion">
+            CONOCIMIENTOS
+        </div>
+
+        <div class="tarjeta">
+
+            <p>
+                Office (Word, Excel y PowerPoint) - Nivel Intermedio
+            </p>
+
+        </div>
+
+    </div>
+<!-- LINKEDIN -->
+
+<div class="seccion" id="linkedin">
+
+<div class="titulo-seccion">
+    LINKEDIN
+</div>
+
+<div class="tarjeta">
+
+    <p>
+        Y aquí me puedes encontrar en
+        <a href="https://www.linkedin.com/in/diana-carolina-mantilla-banich-232b432ab?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+           target="_blank"
+           style="color:#C2185B; font-weight:bold; text-decoration:none;">
+            LinkedIn
+        </a>.
+    </p>
+
+</div>
+
+</div>
+
+
+</div>
+
+<script>
+
+function abrirMenu(){
+    document.getElementById("miSidebar").classList.add("abierto");
+}
+
+function cerrarMenu(){
+    document.getElementById("miSidebar").classList.remove("abierto");
+}
+
+</script>
+
+</body>
+</html>
